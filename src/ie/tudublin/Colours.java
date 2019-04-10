@@ -25,7 +25,7 @@ public class Colours extends PApplet {
     }
     
     public void loadColours(Table t){
-
+        
     }
     
     public void printColours(){

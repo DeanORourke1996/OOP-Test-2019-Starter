@@ -9,8 +9,11 @@ import processing.data.TableRow;
 public class UI extends PApplet
 
 {	
+	ArrayList<Colours> aColours;
 	Colours[] colours;
+	Resistor[] resistors;
 	Table tableColours;
+	Table tableResistor;
 
 	public void separate(int value)
 	{
@@ -34,6 +37,7 @@ public class UI extends PApplet
 
 	public void setup() 
 	{
+		// Colours Table
 		int numColours = 10;
 		int index = 1;
 		int r, g, b, value;
@@ -41,19 +45,35 @@ public class UI extends PApplet
 		tableColours = loadTable("colours.csv", "header, csv");
 		colours = new Colours[numColours];
 
+		// populate colours
 		for(TableRow row : tableColours.rows()) {
 			r = row.getInt("r");
 			g = row.getInt("g");
 			b = row.getInt("b");
 			value = row.getInt("value");
 			colour = row.getString("colour");
-			colours[index] = new Colours(r, g, b, value, colour);
+			colours[index] = new Colours(r, g, b, value, colour); //
+			colours[index] = new Colours(aColours); // method overloading
 			index++;
 		}
 
+		// Resistor Table
+		tableResistor = loadTable("resistors.csv", "header, csv");
+		int resVal;
+		index = 0;
+
+		for(TableRow row : tableResistor.rows()) {
+			resVal = row.getInt(index);
+		}
+
+
+
 	}
+
+	Resistor rest;
 	
 	public void draw()
 	{			
+		rest.render();
 	}
 }
