@@ -9,7 +9,7 @@ import processing.data.TableRow;
 public class UI extends PApplet
 
 {	
-	Table table;
+	Table tableColours;
 
 	public void separate(int value)
 	{
@@ -33,11 +33,12 @@ public class UI extends PApplet
 
 	public void setup() 
 	{
-		table = loadTable("colours.csv", "header");
+		tableColours = loadTable("colours.csv", "header");
 		ArrayList<Colours> colours = new ArrayList<>();
 
-		
-
+		for(TableRow row : tableColours.rows()){
+			
+		}
 
 	}
 	
