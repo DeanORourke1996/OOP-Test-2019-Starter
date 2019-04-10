@@ -39,7 +39,7 @@ public class UI extends PApplet
 	{
 		// Colours Table
 		int numColours = 10;
-		int index = 1;
+		int index = 0;
 		int r, g, b, value;
 		String colour;
 		tableColours = loadTable("colours.csv", "header, csv");
@@ -64,16 +64,16 @@ public class UI extends PApplet
 
 		for(TableRow row : tableResistor.rows()) {
 			resVal = row.getInt(index);
+			resistors[index] = new Resistor(resVal);
+			index++;
 		}
 
 
 
 	}
-
-	Resistor rest;
 	
 	public void draw()
 	{			
-		rest.render();
+		
 	}
 }

@@ -12,10 +12,12 @@ public class Resistor extends PApplet {
     public PVector size = new PVector(50, 50);
     public PVector pos = new PVector(100, 50);
 
+    PApplet ui;
 
+    // Constructor
     public Resistor(int _value) {
         this.value = _value;
-        this.hundreds = (_value / 100);
+        this.hundreds = (_value / 100); //              CONVERT VALUES
         this.tens = (_value - (hundreds * 100)) / 10;
         this.ones = _value - ((hundreds * 100) + (tens * 10));
 
@@ -28,9 +30,8 @@ public class Resistor extends PApplet {
 
 
     public void render() {
-        noStroke();
-        noFill();
-        rect(pos.x, pos.y, size.x, size.y);
-
+        ui.noStroke();
+        ui.noFill();
+        ui.rect(pos.x, pos.y, size.x, size.y);
     }
 }
