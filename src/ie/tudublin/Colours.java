@@ -11,6 +11,7 @@ public class Colours extends PApplet {
     public int r, g, b;
     public int value;
     private String colour;
+    Table myTable;
 
     public Colours(int _r, int _g, int _b, int _value, String _colour){
         this.r = _r;
